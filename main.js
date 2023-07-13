@@ -22,35 +22,37 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3]
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5]
 
-
 // Add your functions below:
 
 function ValidateCred(array) {
     for (i = array.length; i >= 1; i--) {
         if (i < array.length && array.length % 2 === 1) { //odd array number check
             if (i % 2 === 0) { //double every other digit 
-                array[i-1] = array[i-1] * 2;
-                if (array [i-1] > 9) { //subtract 9 if above 9
-                    array[i-1] = array[i-1] - 9;
+                array[i - 1] = array[i - 1] * 2;
+                if (array[i - 1] > 9) { //subtract 9 if above 9
+                    array[i - 1] = array[i - 1] - 9;
                 }
-            } 
+            }
         }
         else if (i < array.length && array.length % 2 === 0) { //even array number check
             if (i % 2 === 1) { //double every other digit 
-                array[i-1] = array[i-1] * 2;
-                if (array [i-1] > 9) { //subtract 9 if above 9
-                    array[i-1] = array[i-1] - 9;
+                array[i - 1] = array[i - 1] * 2;
+                if (array[i - 1] > 9) { //subtract 9 if above 9
+                    array[i - 1] = array[i - 1] - 9;
                 }
             }
         }
     }
-    const sum = array.reduce((partialSum, a) => partialSum + a, 0);
+    const sum = array.reduce((partialSum, a) => partialSum + a, 0); //sum across array
     if (sum % 10 === 0) {
         return true
     }
-    else {return false}
+    else { return false }
 }
 
+function name(params) {
+    
+}
 
 
 

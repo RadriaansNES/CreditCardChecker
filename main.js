@@ -24,7 +24,8 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
-function ValidateCred(array) {
+function ValidateCred(parray) {
+    let array = parray.slice();
     for (let i = array.length; i >= 1; i--) {
         if (i < array.length && array.length % 2 === 1) { //odd array number check
             if (i % 2 === 0) { //double every other digit 
@@ -51,7 +52,7 @@ function ValidateCred(array) {
 }
 
 function findInvalidCards(NestedArray) {
-    var newray = [];
+    let newray = [];
     for (let i = 0; i < NestedArray.length; i++) {
         if (ValidateCred(NestedArray[i]) === false){
             newray.push(NestedArray[i]);
